@@ -1,0 +1,257 @@
+// =============================================================================
+// Glulx Dracula v0.1 (2018-11-19) | ** INITIAL DRAFT **
+// =============================================================================
+// Copyright (c) Tristano Ajmone, 2018. MIT License.
+//      https://github.com/tajmone/sublime-glulx
+// -----------------------------------------------------------------------------
+// This color scheme uses the "Dracula Theme" color palette, and additional
+// colors and settings taken from the "Dracula for Sublime Text" package, both
+// by Zeno Rocha and (c) Dracula Theme, released under MIT License (the full
+// license can be found at the end of this file):
+// 
+//      https://draculatheme.com/
+//      https://github.com/dracula/dracula-theme#color-palette
+//      https://github.com/dracula/sublime
+// -----------------------------------------------------------------------------
+{
+    "name":   "Glulx Dracula",
+    "author": "Tristano Ajmone",
+    "variables":
+    {
+        // ======================
+        // Dracula Theme Palette:
+        // ======================
+        "armadillo":        "#3b3a32",
+        "black":            "#000000",
+        "charade":          "#282a36",
+        "chetwode_blue":    "#6272a4",
+        "cyan":             "#8be9fd",
+        "green":            "#50fa7b",
+        "grey":             "#f8f8f2",
+        "gunpoweder":       "#44475a",
+        "maire":            "#222218",
+        "orange":           "#ffb86c",
+        "pink":             "#ff79c6",
+        "purple":           "#bd93f9",
+        "red":              "#ff5555",
+        "white":            "#ffffff",
+        "yellow":           "#f1fa8c",
+        // =======================
+        // Sublime Globals Scheme:
+        // =======================
+        "active_guide":     "#9d550fb0",
+        "background":       "var(charade)",
+        "bracketsFG":       "color(var(grey) alpha(0.65))",
+        "caret":            "var(foreground)",
+        "comment":          "var(chetwode_blue)",
+        "current_line":     "var(gunpoweder)",
+        "find_highlight":   "var(yellow)",
+        "find_highlightFG": "var(black)",
+        "foreground":       "var(grey)",
+        "highlight":        "var(yellow)",
+        "invisibles":       "var(armadillo)",
+        "line_highlight":   "var(selection)",
+        "selection":        "var(gunpoweder)",
+        "selection_border": "var(maire)",
+    },
+    "globals":
+    {
+        "foreground": "var(foreground)",
+        "background": "var(background)",
+
+        "caret":          "var(caret)",
+        "invisibles":     "var(invisibles)",
+        "line_highlight": "var(line_highlight)",
+        // -------
+        // Accents
+        // -------
+        // "misspelling": "color(var(red) alpha(0.5))",
+        // "minimap_border": "var(XXX)",
+        // "accent": "color(var(red) alpha(0.5))",
+        // "fold_marker": "var(yellow)",
+        // ------
+        // Gutter
+        // ------
+        // "gutter": "var(background)",
+        // "gutter_foreground": "var(comment)",
+        // ---------
+        // Selection
+        // ---------
+        "selection": "var(selection)",
+        // "selection_foreground": "var(black)",
+        "selection_border": "var(selection_border)",
+        // "selection_border_width": "1",
+        // "selection_corner_style": "round",  // round | cut | square
+        // "selection_corner_radius": "3.5",   // (only for round or cut)
+        // "inactive_selection": "var(XXX)",
+        // "inactive_selection_foreground": "var(black)",
+        // ----
+        // Find
+        // ----
+        "highlight": "var(highlight)",
+        "find_highlight": "var(find_highlight)",
+        "find_highlight_foreground": "var(find_highlightFG)",
+        // ------
+        // Guides
+        // ------
+        // "guide": "var(XXX)",
+        "active_guide": "var(active_guide)",
+        // "stack_guide":  "color(var(XXX) alpha(0.35))",
+        // --------
+        // Brackets
+        // --------
+        "brackets_options": "underline",
+        "brackets_foreground": "var(bracketsFG)",
+        "bracket_contents_options": "underline",
+        "bracket_contents_foreground": "var(bracketContentsForeground)",
+        // ----
+        // Tags
+        // ----
+        "tags_options": "stippled_underline",
+        // "tags_foreground": "var(grey)",
+        // -------
+        // Shadows
+        // -------
+        // "shadow": "var(black)",
+        // "shadow_width": "32", // max: 32
+    },
+    "rules":
+    [
+        {
+        // =====================================================================
+        // COMMENTS
+        // =====================================================================
+            "name": "Comment",
+            "scope": "comment",
+            "foreground": "var(comment)",
+            // "font_style": "italic"
+        },
+        // =====================================================================
+        // STRINGS
+        // =====================================================================
+        {
+            "name": "DQ String",
+            "scope": "string.quoted.double",
+            "foreground": "var(yellow)",
+        },
+        {
+            "name": "DQ String Delimiters",
+            "scope": "punctuation.definition.string",
+            "foreground": "var(orange)",
+
+        },
+        {
+            "name": "Escape Sequences",
+            "scope": "constant.character.escape",
+            "foreground": "var(pink)",
+            // "font_style": "bold",
+        },
+        // =====================================================================
+        // CHARACTER LITERALS
+        // =====================================================================
+        {
+            "name": "Character Literal",
+            "scope": "string.quoted.single",
+            "foreground": "var(green)",
+        },
+        // {
+        //     "name": "String Delimiters",
+        //     "scope": "string.quoted.single punctuation.definition.string",
+        //     "foreground": "var(orange)",
+        // },
+        // =====================================================================
+        // LABELS
+        // =====================================================================
+        {
+            "name": "Labels",
+            "scope": "entity.name.label",
+            "foreground": "var(green)",
+            // "font_style": "bold"
+        },
+        // =====================================================================
+        // DIRECTIVES
+        // =====================================================================
+        {
+            "name": "Directives",
+            "scope": "support.function.directive",
+            "foreground": "var(cyan)",
+        },
+        // =====================================================================
+        // KEYWORDS
+        // =====================================================================
+        {
+            "name": "Keywords",
+            "scope": "keyword",
+            "foreground": "var(pink)",
+            // "font_style": "bold"
+        },
+        // {
+        //     "name": "Keywords Control",
+        //     "scope": "keyword.control",
+        //     "foreground": "var(pink)",
+        // },
+
+        {
+            "name": "Import",
+            "scope": "keyword.control.import.include",
+            "foreground": "var(purple)",
+        },
+        // =====================================================================
+        // NUMBERS
+        // =====================================================================
+         {
+            "name": "Numbers",
+            "scope": "constant.numeric",
+            "foreground": "var(purple)",
+        },
+        // =====================================================================
+        // OPERATORS
+        // =====================================================================
+        {
+            // ** CURRENTLY UNUSED! **
+            "name": "Operators",
+            "scope": "keyword.operator",
+            "foreground": "var(orange)",
+        },
+        // =====================================================================
+        // INVALID & ERRORS
+        // =====================================================================
+        {
+            "name": "Invalid",
+            "scope": "invalid",
+            "foreground": "var(white)",
+            "background": "var(red)",
+            "font_style": "bold"
+        },
+        {
+            // ** CURRENTLY UNUSED! **
+            "scope": "message.error",
+            "foreground": "var(black)",
+            "background": "var(orange)",
+            "font_style": "bold"
+        },
+    ]
+}
+// -----------------------------------------------------------------------------
+// The MIT License (MIT)
+// 
+// Copyright (c) 2013-present Dracula Theme
+// 
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+// 
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+// 
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
+// -----------------------------------------------------------------------------

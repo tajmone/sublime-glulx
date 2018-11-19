@@ -1,0 +1,19 @@
+; SYNTAX TEST "Packages/Glulx/Glulx.sublime-syntax"
+
+; ==============================================================================
+;                               Character Literals                              
+; ==============================================================================
+    streamchar 'a'
+;              ^^^  string.quoted.single
+;              ^    punctuation.definition.string.begin
+;                ^  punctuation.definition.string.end
+; ==============================================================================
+;                      Character Literals Escape Sequences                      
+; ==============================================================================
+    streamchar '\n'
+;               ^^  string.quoted.single  constant.character.escape
+; ------------------------------------------------------------------------------
+;                            Invalid Escape Sequences                           
+; ------------------------------------------------------------------------------
+    streamchar '\1'
+;               ^^  string.quoted.single  invalid.illegal.unknown-escape

@@ -1,6 +1,6 @@
 %YAML 1.2
 ---
-# "Glulx.sublime-syntax" v0.1.0 (2018-11-19) | Glulx v3.1.2
+# "Glulx.sublime-syntax" v0.1.1 (2018-11-19) | Glulx v3.1.2
 # ==============================================================================
 #                                  Glulx Syntax                                 
 # ==============================================================================
@@ -44,6 +44,7 @@ contexts:
     - include: mnemonics
     - include: numbers
     - include: strings
+    - include: char_literal
 
   # ============================================================================
   #                                   NUMBERS                                   
@@ -118,6 +119,21 @@ contexts:
     # Any other escape is invalid
     - match: \\.
       scope: invalid.illegal.unknown-escape.glulx
+# ==============================================================================
+#                               CHARACTER LITERALS                              
+# ==============================================================================
+  char_literal:
+    - match: "'"
+      scope: punctuation.definition.string.begin.glulx
+      push: inside_char_literal
+
+  inside_char_literal:
+    - meta_include_prototype: false
+    - meta_scope: string.quoted.single.glulx
+    - include: escapes
+    - match: "'"
+      scope: punctuation.definition.string.end.glulx
+      pop: true
 
   # ============================================================================
   #                                   COMMENTS                                  
