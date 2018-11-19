@@ -1,0 +1,22 @@
+# ==============================================================================
+# Sublime Glulx                         https://github.com/tajmone/sublime-glulx
+# ==============================================================================
+
+## ===========
+## GLULX FILES
+## ===========
+*.ulx   binary
+
+
+# A list of ignore patterns that might be useful for developers working on the
+# package under different OSs and using different tools.
+# Add more patterns if needed.
+
+*.pyc
+*.cache
+*.sublime-project
+*.sublime-workspace
+
+.DS_Store
+
+# EOF #

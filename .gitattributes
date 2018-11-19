@@ -1,0 +1,81 @@
+# ==============================================================================
+# Sublime Glulx                         https://github.com/tajmone/sublime-glulx
+# ==============================================================================
+
+# Set Git's default behaviour to text-files autodetection, in case users don't
+# have `core.autocrlf` set:
+* text=auto
+
+## ===========
+## GLULX FILES
+## ===========
+*.ga    text
+*.ulx   binary
+
+## ===================
+## DOCUMENTATION FILES
+## ===================
+LICENSE        text
+*.md           text
+
+## ============
+## GIT SETTINGS
+## ============
+.gitattributes text
+.gitconfig     text
+.gitignore     text
+.gitmodules    text
+
+## ==================
+## SUBLIME TEXT FILES
+## ==================
+*.hidden-tmTheme        text eol=lf
+*.sublime-build         text
+*.sublime-color-scheme  text
+*.sublime-commands      text
+*.sublime-completions   text
+*.sublime-keymap        text
+*.sublime-macro         text
+*.sublime-menu          text
+*.sublime-mousemap      text
+*.sublime-project       text
+*.sublime-settings      text
+*.sublime-snippet       text
+*.sublime-syntax        text
+*.sublime-theme         text
+*.sublime-workspace     text
+*.sublime_metrics       text
+*.sublime_session       text
+*.tmPreferences         text
+*.YAML-propertyList     text
+
+## ========
+## GRAPHICS
+## ========
+*.gif   binary
+*.ico   binary
+*.jpg   binary
+*.jpeg  binary
+*.png   binary
+*.svg   binary
+*.svgz  binary
+*.wbmp  binary
+*.webp  binary
+
+# ==============================================================================
+#                                GitHub Linguist                                
+# ==============================================================================
+#  -- https://github.com/github/linguist
+# Manually define/override some extension so that GitHub's Linguist library can
+# 1) correctly gather statistics on source files, and
+# 2) use proper syntax highlighting on GitHub's WebUI.
+
+## ==============
+## Sublime Text 3
+## ==============
+# New Sublime Text file formats not reckognized by Linguist:
+*.sublime-color-scheme      linguist-language=JSON
+*.hidden-tmTheme            linguist-language=XML
+*.YAML-propertyList         linguist-language=YAML
+
+# EOF #

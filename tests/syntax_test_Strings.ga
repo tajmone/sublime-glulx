@@ -1,0 +1,29 @@
+; SYNTAX TEST "Packages/Glulx/Glulx.sublime-syntax"
+
+.include "srcfile.ga"
+;        ^^^^^^^^^^^^   string.quoted.double
+;        ^              punctuation.definition.string.begin
+;                   ^   punctuation.definition.string.end
+
+; ==============================================================================
+;                            String Escape Sequences                            
+; ==============================================================================
+
+ExStrPlain:     .cstring "a string"
+;                        ^^^^^^^^^^  string.quoted.double
+;                        ^           punctuation.definition.string.begin
+ExStrEscaped:   .encoded "Mr.\"Gatsby\""
+;                            ^^           constant.character.escape.glulx
+ExStrEscaped:   .encoded "Mr.\'Gatsby\'"
+;                            ^^           constant.character.escape.glulx
+.encoded "New Line\nEsc Slash\\."
+;                 ^^                      constant.character.escape.glulx
+;                            ^^           constant.character.escape.glulx
+
+; ------------------------------------------------------------------------------
+;                            Invalid Escape Sequences                           
+; ------------------------------------------------------------------------------
+
+BadEscapes: .cstring "xxx\txxx\?xxx"
+;                        ^^       invalid.illegal.unknown-escape.glulx
+;                             ^^  invalid.illegal.unknown-escape.glulx

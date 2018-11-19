@@ -1,0 +1,19 @@
+// -----------------------------------------------------------------------------
+//                            Sublime-Glulx Settings                            
+// -----------------------------------------------------------------------------
+// The commented out settings in this file are the reccomended settings that
+// I've found best for working with Glulx source file. You may copy and paste
+// them to your "User/Glulx.sublime-settings" settings file and uncomment them.
+// 
+// Non commented out settings are either mandatory or strongly recommended
+// default settings for the syntax to work properly. If you need to override
+// them, you can do so in your "User/Glulx.sublime-settings" settings file.
+{
+  // =========================================================================
+  // FILE ENCODING
+  // =========================================================================
+  // Glulx-Assemble source files must be in UTF-8:
+  "default_encoding":  "UTF-8",
+  "fallback_encoding": "UTF-8",
+
+}

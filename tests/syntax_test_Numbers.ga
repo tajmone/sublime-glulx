@@ -1,0 +1,36 @@
+; SYNTAX TEST "Packages/Glulx/Glulx.sublime-syntax"
+
+; ==============================================================================
+;                                Decimal Numbers                                
+; ==============================================================================
+copy 0 test
+;    ^   constant.numeric.integer
+
+copy 666 test
+;    ^^^ constant.numeric.integer
+
+copy -33 test
+;     ^^ constant.numeric.integer
+;    ^   keyword.operator.arithmetic
+
+; ==============================================================================
+;                              Hexadecimal Numbers                              
+; ==============================================================================
+copy $0 test
+;    ^^  constant.numeric.integer.hexadecimal
+;    ^   punctuation.definition.numeric.hexadecimal
+copy $FF test
+;    ^^^ constant.numeric.integer.hexadecimal
+;    ^   punctuation.definition.numeric.hexadecimal
+; ==============================================================================
+;                             Floating Point Numbers                            
+; ==============================================================================
+copy 999.999 test
+;    ^^^^^^^ constant.numeric.float
+;       ^    punctuation.separator.decimal
+copy .999 test
+;    ^^^^    constant.numeric.float
+;    ^       punctuation.separator.decimal
+copy 999. test
+;    ^^^^    constant.numeric.float
+;       ^    punctuation.separator.decimal

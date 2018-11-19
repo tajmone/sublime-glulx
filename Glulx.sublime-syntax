@@ -1,0 +1,160 @@
+%YAML 1.2
+---
+# "Glulx.sublime-syntax" v0.1.0 (2018-11-19) | Glulx v3.1.2
+# ==============================================================================
+#                                  Glulx Syntax                                 
+# ==============================================================================
+# Syntax definition for Glulx VM Assembly as implemented in glulx-assemble:
+#   https://github.com/tajmone/sublime-glulx
+# ------------------------------------------------------------------------------
+# Glulx is a 32 bit Virtual Machine for Interactive Fiction text adventures,
+# created by Andrew Plotkin (aka Zarf) in 1999:
+# 
+#   https://www.eblong.com/zarf/glulx/
+# 
+# Glulx-assemble is an assembler for creating Glulx program files, created by
+# Gren Drake in September 2018:
+# 
+#   https://github.com/GrenDrake/glulx-assemble
+# 
+# Since Glulx-assemble it's a young tool still in the making, its syntax might
+# change in the future. Therefore, this package is still experimental, until
+# glulx-assemble reaches a stable release.
+
+# ------------------------------------------------------------------------------
+# Copyright (c) Tristano Ajmone, 2018. MIT License.
+# ------------------------------------------------------------------------------
+name: Glulx
+file_extensions:
+  - ga
+scope: source.glulx
+
+variables:
+  # This identifier definition is not based on a formal strict definition. See:
+  #   https://github.com/GrenDrake/glulx-assemble/issues/2
+  identifier: '\b[a-zA-Z_][a-zA-Z0-9_\.]*\b'
+
+contexts:
+  prototype:
+    - include: comments
+
+  main:
+    - include: directives
+    - include: labels
+    - include: mnemonics
+    - include: numbers
+    - include: strings
+
+  # ============================================================================
+  #                                   NUMBERS                                   
+  # ============================================================================
+  numbers:
+    - include: numbers_hexadecimal
+    - include: numbers_float
+    - include: numbers_decimal
+  # ----------------------------------------------------------------------------
+  #                             Hexadecimal Numbers                             
+  # ----------------------------------------------------------------------------
+  numbers_hexadecimal:
+    - match: (\$)([[:xdigit:]]+)\b
+      scope: constant.numeric.integer.hexadecimal.glulx
+      captures:
+        1: punctuation.definition.numeric.hexadecimal.glulx
+  # ----------------------------------------------------------------------------
+  #                            Floating Point Numbers                           
+  # ----------------------------------------------------------------------------
+  # Adapted from Python syntax:
+  # https://github.com/sublimehq/Packages/blob/1fd58c5/Python/Python.sublime-syntax#L392
+  numbers_float:
+    # -------------------
+    # Mandatory fraction:
+    # -------------------
+    - match: (?i)\d*(\.)\d+(?:e[\-\+]?\d+)?
+      scope: constant.numeric.float.glux
+      captures:
+        1: punctuation.separator.decimal.glux
+    # -------------------
+    # Mandatory exponent:
+    # -------------------
+    - match: \b(?i)(?:\d+(?:(\.)\d*)?|(\.)\d+)(?:e[\-\+]?\d+)
+      scope: constant.numeric.float.glux
+      captures:
+        1: punctuation.separator.decimal.glux
+        2: punctuation.separator.decimal.glux
+    # --------------------
+    # Mandatory digitpart:
+    # --------------------
+    - match: \b\d+(\.)
+      scope: constant.numeric.float.glux
+      captures:
+        1: punctuation.separator.decimal.glux
+  # ----------------------------------------------------------------------------
+  #                               Decimal Numbers                               
+  # ----------------------------------------------------------------------------
+  numbers_decimal:
+    - match: '\b\d+\b'
+      scope: constant.numeric.integer.decimal.glulx
+
+  # ============================================================================
+  #                                   STRINGS                                   
+  # ============================================================================
+  strings:
+    - match: '"'
+      scope: punctuation.definition.string.begin.glulx
+      push: inside_string
+
+  inside_string:
+    - meta_include_prototype: false
+    - meta_scope: string.quoted.double.glulx
+    - include: escapes
+    - match: '"'
+      scope: punctuation.definition.string.end.glulx
+      pop: true
+
+  escapes:
+    # Supported string escapes: \\  \"  \'  \n
+    - match: \\[n'"\\]
+      scope: constant.character.escape.glulx
+    # Any other escape is invalid
+    - match: \\.
+      scope: invalid.illegal.unknown-escape.glulx
+
+  # ============================================================================
+  #                                   COMMENTS                                  
+  # ============================================================================
+  comments:
+    - match: ';'
+      scope: punctuation.definition.comment.glulx
+      push:
+        - meta_scope: comment.line.semicolon.glulx
+        - match: $\n?
+          pop: true
+  # ============================================================================
+  #                          GLULX-ASSEMBLE DIRECTIVES                          
+  # ============================================================================
+  #     .byte                .cstring           .define          .encoded
+  #     .end_header          .extra_memory      .function        .include
+  #     .include_binary      .short             .stack_size      .string
+  #     .string_table        .unicode           .word            .zero
+
+  directives:
+    - match: (?i)\.(byte|cstring|define|encoded|end_header|extra_memory|function|include_binary|include|short|stack_size|string_table|string|unicode|word|zero)\b
+      scope: support.function.directive.glulx 
+  # ============================================================================
+  #                            GLULX-ASSEMBLE LABELS                            
+  # ============================================================================
+  # Although not currently forbidden, labels should not start with a dot, nor
+  # with a digit.
+  labels:
+    - match: '(?<!\.){{identifier}}(:)'
+      scope: entity.name.label.glulx
+      captures:
+        1: punctuation.definition.label.glulx
+  # ============================================================================
+  #                               GLULX MNEMONICS                               
+  # ============================================================================
+  mnemonics:
+    - match: (?i)\b(accelfunc|accelparam|f?add|aloadbit|aload[bs]?|astorebit|astore[bs]?|atan2?|binarysearch|bitand|bitnot|bitor|bitxor|callf[i]{0,3}|call|catch|ceil|copy[bs]?|a?cos|debugtrap|f?div|exp|floor|ftonum[nz]|gestalt|getiosys|getmemsize|getstringtbl|glk|jf?eq|jfg[et]|jfl[et]|jfne|jgeu?|jgtu?|jisinf|jisnan|jleu?|jltu?|jn[ez]|jumpabs|jump|jz|linearsearch|linkedsearch|log|malloc|mcopy|mfree|f?mod|f?mul|mzero|neg|nop|numtof|pow|protect|quit|random|restart|restoreundo|restore|return|saveundo|save|setiosys|setmemsize|setrandom|setstringtbl|sex[bs]|shiftl|a?sin|sqrt|[su]shiftr|stk(?:copy|count|peek|roll|swap)|stream(?:char|num|str|unichar)|f?sub|tailcall|tan|throw|verify)\b
+      scope: keyword.control.glulx
+
+# EOF #

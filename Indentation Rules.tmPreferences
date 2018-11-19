@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plist version="1.0">
+<dict>
+    <key>name</key>
+    <string>Indentation Rules</string>
+    <key>scope</key>
+    <string>source.glulx</string>
+    <key>settings</key>
+    <dict>
+        <key>increaseIndentPattern</key>
+        <string>(?x)
+         ^.*\b\w+:$
+        |^.*\.function.*$
+        </string>
+    </dict>
+</dict>
+</plist>

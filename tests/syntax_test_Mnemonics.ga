@@ -1,0 +1,350 @@
+; SYNTAX TEST "Packages/Glulx/Glulx.sublime-syntax"
+
+    accelfunc
+;   ^^^^^^^^^     keyword.control
+
+    accelparam
+;   ^^^^^^^^^^    keyword.control
+
+    acos
+;   ^^^^          keyword.control
+
+    add
+;   ^^^           keyword.control
+
+    aload
+;   ^^^^^         keyword.control
+
+    aloadb
+;   ^^^^^^        keyword.control
+
+    aloadbit
+;   ^^^^^^^^      keyword.control
+
+    aloads
+;   ^^^^^^        keyword.control
+
+    asin
+;   ^^^^          keyword.control
+
+    astore
+;   ^^^^^^        keyword.control
+
+    astoreb
+;   ^^^^^^^       keyword.control
+
+    astorebit
+;   ^^^^^^^^^     keyword.control
+
+    astores
+;   ^^^^^^^       keyword.control
+
+    atan
+;   ^^^^          keyword.control
+
+    atan2
+;   ^^^^^         keyword.control
+
+    binarysearch
+;   ^^^^^^^^^^^^  keyword.control
+
+    bitand
+;   ^^^^^^        keyword.control
+
+    bitnot
+;   ^^^^^^        keyword.control
+
+    bitor
+;   ^^^^^         keyword.control
+
+    bitxor
+;   ^^^^^^        keyword.control
+
+    call
+;   ^^^^          keyword.control
+
+    callf
+;   ^^^^^         keyword.control
+
+    callfi
+;   ^^^^^^        keyword.control
+
+    callfii
+;   ^^^^^^^       keyword.control
+
+    callfiii
+;   ^^^^^^^^      keyword.control
+
+    catch
+;   ^^^^^         keyword.control
+
+    ceil
+;   ^^^^          keyword.control
+
+    copy
+;   ^^^^          keyword.control
+
+    copyb
+;   ^^^^^         keyword.control
+
+    copys
+;   ^^^^^         keyword.control
+
+    cos
+;   ^^^           keyword.control
+
+    debugtrap
+;   ^^^^^^^^^     keyword.control
+
+    div
+;   ^^^           keyword.control
+
+    exp
+;   ^^^           keyword.control
+
+    fadd
+;   ^^^^          keyword.control
+
+    fdiv
+;   ^^^^          keyword.control
+
+    floor
+;   ^^^^^         keyword.control
+
+    fmod
+;   ^^^^          keyword.control
+
+    fmul
+;   ^^^^          keyword.control
+
+    fsub
+;   ^^^^          keyword.control
+
+    ftonumn
+;   ^^^^^^^       keyword.control
+
+    ftonumz
+;   ^^^^^^^       keyword.control
+
+    gestalt
+;   ^^^^^^^       keyword.control
+
+    getiosys
+;   ^^^^^^^^      keyword.control
+
+    getmemsize
+;   ^^^^^^^^^^    keyword.control
+
+    getstringtbl
+;   ^^^^^^^^^^^^  keyword.control
+
+    glk
+;   ^^^           keyword.control
+
+    jeq
+;   ^^^           keyword.control
+
+    jfeq
+;   ^^^^          keyword.control
+
+    jfge
+;   ^^^^          keyword.control
+
+    jfgt
+;   ^^^^          keyword.control
+
+    jfle
+;   ^^^^          keyword.control
+
+    jflt
+;   ^^^^          keyword.control
+
+    jfne
+;   ^^^^          keyword.control
+
+    jge
+;   ^^^           keyword.control
+
+    jgeu
+;   ^^^^          keyword.control
+
+    jgt
+;   ^^^           keyword.control
+
+    jgtu
+;   ^^^^          keyword.control
+
+    jisinf
+;   ^^^^^^        keyword.control
+
+    jisnan
+;   ^^^^^^        keyword.control
+
+    jle
+;   ^^^           keyword.control
+
+    jleu
+;   ^^^^          keyword.control
+
+    jlt
+;   ^^^           keyword.control
+
+    jltu
+;   ^^^^          keyword.control
+
+    jne
+;   ^^^           keyword.control
+
+    jnz
+;   ^^^           keyword.control
+
+    jump
+;   ^^^^          keyword.control
+
+    jumpabs
+;   ^^^^^^^       keyword.control
+
+    jz
+;   ^^            keyword.control
+
+    linearsearch
+;   ^^^^^^^^^^^^  keyword.control
+
+    linkedsearch
+;   ^^^^^^^^^^^^  keyword.control
+
+    log
+;   ^^^           keyword.control
+
+    malloc
+;   ^^^^^^        keyword.control
+
+    mcopy
+;   ^^^^^         keyword.control
+
+    mfree
+;   ^^^^^         keyword.control
+
+    mod
+;   ^^^           keyword.control
+
+    mul
+;   ^^^           keyword.control
+
+    mzero
+;   ^^^^^         keyword.control
+
+    neg
+;   ^^^           keyword.control
+
+    nop
+;   ^^^           keyword.control
+
+    numtof
+;   ^^^^^^        keyword.control
+
+    pow
+;   ^^^           keyword.control
+
+    protect
+;   ^^^^^^^       keyword.control
+
+    quit
+;   ^^^^          keyword.control
+
+    random
+;   ^^^^^^        keyword.control
+
+    restart
+;   ^^^^^^^       keyword.control
+
+    restore
+;   ^^^^^^^       keyword.control
+
+    restoreundo
+;   ^^^^^^^^^^^   keyword.control
+
+    return
+;   ^^^^^^        keyword.control
+
+    save
+;   ^^^^          keyword.control
+
+    saveundo
+;   ^^^^^^^^      keyword.control
+
+    setiosys
+;   ^^^^^^^^      keyword.control
+
+    setmemsize
+;   ^^^^^^^^^^    keyword.control
+
+    setrandom
+;   ^^^^^^^^^     keyword.control
+
+    setstringtbl
+;   ^^^^^^^^^^^^  keyword.control
+
+    sexb
+;   ^^^^          keyword.control
+
+    sexs
+;   ^^^^          keyword.control
+
+    shiftl
+;   ^^^^^^        keyword.control
+
+    sin
+;   ^^^           keyword.control
+
+    sqrt
+;   ^^^^          keyword.control
+
+    sshiftr
+;   ^^^^^^^       keyword.control
+
+    stkcopy
+;   ^^^^^^^       keyword.control
+
+    stkcount
+;   ^^^^^^^^      keyword.control
+
+    stkpeek
+;   ^^^^^^^       keyword.control
+
+    stkroll
+;   ^^^^^^^       keyword.control
+
+    stkswap
+;   ^^^^^^^       keyword.control
+
+    streamchar
+;   ^^^^^^^^^^    keyword.control
+
+    streamnum
+;   ^^^^^^^^^     keyword.control
+
+    streamstr
+;   ^^^^^^^^^     keyword.control
+
+    streamunichar
+;   ^^^^^^^^^^^^^ keyword.control
+
+    sub
+;   ^^^           keyword.control
+
+    tailcall
+;   ^^^^^^^^      keyword.control
+
+    tan
+;   ^^^           keyword.control
+
+    throw
+;   ^^^^^         keyword.control
+
+    ushiftr
+;   ^^^^^^^       keyword.control
+
+    verify
+;   ^^^^^^        keyword.control
+

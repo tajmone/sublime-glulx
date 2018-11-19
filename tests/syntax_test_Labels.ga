@@ -1,0 +1,33 @@
+; SYNTAX TEST "Packages/Glulx/Glulx.sublime-syntax"
+
+somelabel:
+;<-^^^^^^^  entity.name.label.glulx
+;        ^  punctuation.definition.label.glulx
+
+label666:
+;<-^^^^^^   entity.name.label.glulx
+;       ^   punctuation.definition.label.glulx
+
+_labeltoo:
+;<-^^^^^^^  entity.name.label.glulx
+;        ^  punctuation.definition.label.glulx
+
+label_too:
+;<-^^^^^^^  entity.name.label.glulx
+;        ^  punctuation.definition.label.glulx
+
+label.too:
+;<-^^^^^^^  entity.name.label.glulx
+;        ^  punctuation.definition.label.glulx
+
+; ==============================================================================
+;                             Test Malformed Labels                             
+; ==============================================================================
+; Although not currently forbidden, labels should not start with a dot, nor with
+; a digit.
+
+666not_label:
+;<-^^^^^^^^^^  - entity.name.label.glulx
+
+.not_label:
+;<-^^^^^^^^    - entity.name.label.glulx

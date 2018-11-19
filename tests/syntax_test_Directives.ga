@@ -1,0 +1,66 @@
+; SYNTAX TEST "Packages/Glulx/Glulx.sublime-syntax"
+
+
+.byte
+;<-^^           support.function.directive.glulx
+
+
+.cstring
+;<-^^^^^        support.function.directive.glulx
+
+
+.define
+;<-^^^^          support.function.directive.glulx
+
+
+.encoded
+;<-^^^^^         support.function.directive.glulx
+
+
+.end_header
+;<-^^^^^^^^      support.function.directive.glulx
+
+.extra_memory 256
+;<-^^^^^^^^^^    support.function.directive.glulx
+
+
+.function
+;<-^^^^^^        support.function.directive.glulx
+
+
+.include "glk.ga"
+;<-^^^^^         support.function.directive.glulx
+
+
+.include_binary
+;<-^^^^^^^^^^^^  support.function.directive.glulx
+
+
+.short
+;<-^^^           support.function.directive.glulx
+
+
+.stack_size 2048
+;<-^^^^^^^^      support.function.directive.glulx
+
+
+.string
+;<-^^^^          support.function.directive.glulx
+
+
+.string_table
+;<-^^^^^^^^^^    support.function.directive.glulx
+
+
+.unicode
+;<-^^^^^         support.function.directive.glulx
+
+
+.word
+;<-^^            support.function.directive.glulx
+
+
+.zero
+;<-^^            support.function.directive.glulx
+
+

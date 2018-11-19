@@ -1,0 +1,5 @@
+; SYNTAX TEST "Packages/Glulx/Glulx.sublime-syntax"
+
+; I'm a comment line
+; <- punctuation.definition.comment, comment.line.semicolon
+;^^^^^^^^^^^^^^^^^^^ comment.line.semicolon
