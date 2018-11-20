@@ -24,7 +24,7 @@ Annotated list of pending tasks and features wishlist.
 
 Elements which still need to be implemented:
 
-- [x] __Character literals__ - single quote strings.
+- [x] __Character literal__ — as a single quote string, supports escapes.
 - [ ] __Local variable__.
 - [ ] __Local variable index__.
 - [ ] __Named constant__.
@@ -34,18 +34,24 @@ Elements which still need to be implemented:
 
 # Build System
 
-- [ ] Simple cross-platform build system invoking the `glulx-assemble` binary (expected to be on the system PATH).
+Simple cross-platform [build systems] invoking the `glulx-assemble` binary (expected to be on the system PATH):
+
+- [x] __Assemble__.
+- [x] __Assemble and Run__.
+- [x] __Assemble and Dump Debug__.
+- [x] __Assemble with All Debug Options__.
 
 
 # Color Scheme
 
 - [ ] Create an _ad hoc_ color scheme for the Glulx syntax.
+    + [x] "Glulx Dracula" (_WIP_)
 
 
 <!-----------------------------------------------------------------------------
                                REFERENCE LINKS                                
 ------------------------------------------------------------------------------>
 
-
+[build systems]: https://www.sublimetext.com/docs/3/build_systems.html
 
 <!-- EOF -->

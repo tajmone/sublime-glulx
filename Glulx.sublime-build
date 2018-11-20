@@ -1,0 +1,70 @@
+// "Glulx.sublime-build" v0.0.1 (2018-11-20)
+// =============================================================================
+//                             Glulx Build Systems
+// =============================================================================
+// All build systems require glulx-assemble binary to be on system Path!
+{
+  // ---------------------------------------------------------------------------
+  //                          Default Build: Assemble
+  // ---------------------------------------------------------------------------
+  // Assemble current Glulx source file ("`*.ga`") via shell command:
+  //
+  //    glulx-assemble <filename>.ga <filename>.ulx
+  // ---------------------------------------------------------------------------
+  "shell_cmd": "glulx-assemble \"$file\" \"$file_base_name.ulx\"",
+  "working_dir": "$file_path",
+  "selector": "source.glulx",
+  "file_patterns": [ "*.ag" ],
+  // ===========================================================================
+  //                           Build System Variants
+  // ===========================================================================
+  "variants":
+  [
+    {
+      // -----------------------------------------------------------------------
+      //                             Assemble & Run
+      // -----------------------------------------------------------------------
+      // Assemble the current Glulx source and then open the compiled "*.ulx"
+      // storyfile via shell command:
+      //
+      //    glulx-assemble <filename>.ga <filename>.ulx && <filename>.ulx
+      //
+      // Requires the ".ulx" file extension to be associated with a Glulx terp!
+      // -----------------------------------------------------------------------
+     "name": "Assemble and Run",
+      "shell_cmd": "glulx-assemble \"$file\" \"$file_base_name.ulx\" && \"$file_base_name.ulx\"",
+    },
+    {
+      // -----------------------------------------------------------------------
+      //                          Assemble & Dump Debug
+      // -----------------------------------------------------------------------
+      // Assemble the current Glulx source with -dump-debug option and then open
+      // the generated "out_debug.txt" report via shell command:
+      //
+      //    glulx-assemble -dump-debug <filename>.ga <filename>.ulx && subl out_debug.txt
+      //
+      // Requires the subl command line tool to be on system Path!
+      // -----------------------------------------------------------------------
+      "name": "Assemble with Dump Debug and Open Debug File in Sublime Text",
+      "shell_cmd": "glulx-assemble -dump-debug \"$file\" \"$file_base_name.ulx\" && subl \"$file_path/out_debug.txt\"",
+    },
+    {
+      // -----------------------------------------------------------------------
+      //                    Assemble with All Debug Options
+      // -----------------------------------------------------------------------
+      // Assemble the current Glulx source file with every debug option:
+      //
+      //    -dump-labels -dump-patches -dump-pretokens -dump-tokens -dump-debug
+      //
+      // The following report files will be created in the source folder:
+      //    out_debug.txt
+      //    out_labels.txt
+      //    out_patches.txt
+      //    out_pretokens.txt
+      //    out_tokens.txt
+      // -----------------------------------------------------------------------
+      "name": "Assemble with All Debug Options",
+      "shell_cmd": "glulx-assemble -dump-labels -dump-patches -dump-pretokens -dump-tokens -dump-debug \"$file\" \"$file_base_name.ulx\"",
+    },
+  ]
+}

@@ -2,6 +2,14 @@
 
 This is the CHANGELOG for the Alpha version of [Sublime Glulx].
 
+# 2018/11/20
+
+- Add [build systems]:
+    + Assemble.
+    + Assemble and Run.
+    + Assemble and Dump Debug.
+    + Assemble with All Debug Options.
+
 # 2018/11/19 (2)
 
 - Add "Glulx-Dracula" color scheme.
@@ -34,6 +42,7 @@ First working draft of the package:
 ------------------------------------------------------------------------------>
 
 [Sublime Glulx]: https://github.com/tajmone/sublime-glulx "Sublime Glulx repository on GitHub"
+[build systems]: https://www.sublimetext.com/docs/3/build_systems.html
 
 
 <!-- EOF -->
